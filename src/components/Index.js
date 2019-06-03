@@ -31,17 +31,17 @@ export default class Index extends React.Component {
     }
 
     componentWillMount () {
-        // let session = this.userSession
-        // if(!session.isUserSignedIn() && session.isSignInPending()) {
-        //   session.handlePendingSignIn()
-        //     .then((userData) => {
-        //         console.log(userData)
-        //         // continue
-        //     })
-        // }
-        // else {
-        //     this.props.history.push('/sign-in')
-        // }
+        let session = this.userSession
+        if(!session.isUserSignedIn() && session.isSignInPending()) {
+          session.handlePendingSignIn()
+            .then((userData) => {
+                console.log(userData)
+                // continue
+            })
+        }
+        else {
+            this.props.history.push('/sign-in')
+        }
     }
 
     componentDidMount () {
