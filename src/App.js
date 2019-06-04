@@ -65,7 +65,7 @@ export default class App extends React.Component {
                 <li>
                   <Link to="/about/">
                     <i className="material-icons left">open_in_new</i>
-                    {/* <b>Log Out</b> */}
+                    <b>Log Out</b>
                   </Link>
                 </li>
               }
