@@ -63,7 +63,7 @@ export default class App extends React.Component {
               {
                 this.userSession.isUserSignedIn() &&
                 <li>
-                  <Link to="/about/">
+                  <Link to="/log-out/">
                     <i className="material-icons left">open_in_new</i>
                     <b>Log Out</b>
                   </Link>
