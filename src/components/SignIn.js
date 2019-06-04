@@ -27,7 +27,7 @@ export default class SignIn extends React.Component {
                 <h2>Sign In</h2>
                 <button className="btn-large blue" onClick={this.handleClick}>
                     Sign In With Blockstack
-                    <i className="material-icons left">open_in_new</i>
+                    <i className="material-icons left">exit_to_app</i>
                 </button>
                 <div className="row"></div>
             </div>

@@ -22,7 +22,21 @@ export default class App extends React.Component {
   constructor (props) {
     super(props)
 
+    this.state = {
+      signedIn: false
+    }
+
     this.userSession = new UserSession()
+  }
+
+  componentDidMount () {
+    this.timeout = setTimeout(() => {
+      if (this.userSession && this.userSession.isUserSignedIn() && !this.state.signedIn) {
+        this.setState({
+          signedIn: true
+        })
+      }
+    }, 3000)
   }
 
   render () {
@@ -53,7 +67,12 @@ export default class App extends React.Component {
               </li>
               {
                 this.userSession.isUserSignedIn() &&
-                <li><Link to="/log-out/">Log Out</Link></li>
+                <li>
+                  <Link to="/about/">
+                    <i className="material-icons left">open_in_new</i>
+                    {/* <b>Log Out</b> */}
+                  </Link>
+                </li>
               }
             </ul>
             </div>
@@ -71,5 +90,11 @@ export default class App extends React.Component {
         </div>
       </Router>
     );
+  }
+
+  componentWillUnmount () {
+    if (this.timeout) {
+      clearTimeout(this.timeout)
+    }
   }
 }
