@@ -60,11 +60,6 @@ export default class App extends React.Component {
                   <i className="material-icons left">bookmark_border</i><b>Bookmarks</b>
                 </Link>
               </li>
-              <li>
-                <Link to="/about/">
-                  <i className="material-icons left">info_outline</i><b>About</b>
-                </Link>  
-              </li>
               {
                 this.userSession.isUserSignedIn() &&
                 <li>
@@ -74,6 +69,11 @@ export default class App extends React.Component {
                   </Link>
                 </li>
               }
+              <li>
+                <Link to="/about/">
+                  <i className="material-icons left">info_outline</i><b>About</b>
+                </Link>  
+              </li>
             </ul>
             </div>
           </nav>
