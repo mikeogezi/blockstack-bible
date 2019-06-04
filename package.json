@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "blockstack": "^19.1.0",
+    "blockstack-signin-btn": "^1.0.3",
+    "craco-blockstack": "^1.0.2",
     "jquery": "^3.4.1",
     "lodash": "^4.17.11",
     "materialize-css": "^1.0.0",
@@ -33,5 +35,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://browser.blockstack.org"
 }

@@ -1,11 +1,20 @@
 import React from 'react'
-import { UserSession } from 'blockstack';
+
+import { 
+    UserSession,
+    AppConfig
+} from 'blockstack';
+
+import { SignInBlockstackButton, SignInBlockstackLiteButton } from 'blockstack-signin-btn'
 
 export default class SignIn extends React.Component {
     constructor (props) {
         super(props)
 
-        this.userSession = new UserSession()
+        this.appConfig = new AppConfig()
+        this.userSession = new UserSession({
+            appConfig: this.appConfig
+        })
 
         this.handleClick = this.handleClick.bind(this)
     }
@@ -22,6 +31,10 @@ export default class SignIn extends React.Component {
                     Sign In With Blockstack
                     <i className="material-icons left">open_in_new</i>
                 </button>
+                <div className="row"></div>
+                <SignInBlockstackButton
+                    includeBlockstackLogo={false}
+                />
             </div>
         )
     }
