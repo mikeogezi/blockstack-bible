@@ -32,11 +32,13 @@ export default class Index extends React.Component {
 
     componentWillMount () {
         let session = this.userSession
-        if(!session.isUserSignedIn() && session.isSignInPending()) {
+        if (session.isUserSignedIn()) {
+            console.log('User signed in')
+        }
+        else if (!session.isUserSignedIn() && session.isSignInPending()) {
           session.handlePendingSignIn()
             .then((userData) => {
                 console.log(userData)
-                // continue
             })
         }
         else {

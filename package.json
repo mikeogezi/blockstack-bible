@@ -4,8 +4,6 @@
   "private": true,
   "dependencies": {
     "blockstack": "^19.1.0",
-    "blockstack-signin-btn": "^1.0.3",
-    "craco-blockstack": "^1.0.2",
     "jquery": "^3.4.1",
     "lodash": "^4.17.11",
     "materialize-css": "^1.0.0",
@@ -17,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp cors/_headers build && cp cors/_redirects build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -35,6 +33,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://browser.blockstack.org"
+  }
 }

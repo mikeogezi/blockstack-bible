@@ -5,8 +5,6 @@ import {
     AppConfig
 } from 'blockstack';
 
-import { SignInBlockstackButton, SignInBlockstackLiteButton } from 'blockstack-signin-btn'
-
 export default class SignIn extends React.Component {
     constructor (props) {
         super(props)
@@ -32,9 +30,6 @@ export default class SignIn extends React.Component {
                     <i className="material-icons left">open_in_new</i>
                 </button>
                 <div className="row"></div>
-                <SignInBlockstackButton
-                    includeBlockstackLogo={false}
-                />
             </div>
         )
     }
