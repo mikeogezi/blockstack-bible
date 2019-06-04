@@ -4,6 +4,8 @@ import Verse from '../components/Verse'
 
 import bible from '../data/kjv'
 
+import { UserSession } from 'blockstack'
+
 export default class BiblePassage extends React.Component {
     constructor (props) {
         super(props)
@@ -17,6 +19,24 @@ export default class BiblePassage extends React.Component {
             verse
         }
         this.chapterData = bible[book][chapter]
+
+        this.userSession = new UserSession()
+    }
+
+    componentWillMount () {
+        let session = this.userSession
+        if (session.isUserSignedIn()) {
+            console.log('User signed in')
+        }
+        else if (!session.isUserSignedIn() && session.isSignInPending()) {
+          session.handlePendingSignIn()
+            .then((userData) => {
+                console.log(userData)
+            })
+        }
+        else {
+            this.props.history.push('/sign-in')
+        }
     }
 
     render () {
