@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "blockstack": "^19.1.0",
+    "blockstack": "^19.3.0",
     "jquery": "^3.4.1",
     "lodash": "^4.17.11",
     "materialize-css": "^1.0.0",
